@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BrightSprout is a playful home for educational games in spelling, English, maths and more.">
+  <title>BrightSprout — Learn, play, grow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="BrightSprout home">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>BrightSprout</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#games">Explore games</a>
+      <a href="#grown-ups">For grown-ups</a>
+    </nav>
+    <a class="header-cta" href="#games">Start playing <span aria-hidden="true">→</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>●</span> Little games. Big learning.</p>
+        <h1>Where curious minds come to <em>play.</em></h1>
+        <p class="hero-text">Pick an age, choose a subject, and jump into a game made to build real skills—one happy little win at a time.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#games">Find a game <span aria-hidden="true">→</span></a>
+          <span class="safe-note"><span aria-hidden="true">♥</span> Kid-safe &amp; ad-free</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Colourful letters and shapes representing playful learning">
+        <div class="sun" aria-hidden="true">☀</div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="tile tile-a">A</div>
+        <div class="tile tile-b">b</div>
+        <div class="tile tile-seven">7</div>
+        <div class="pencil" aria-hidden="true">✎</div>
+        <div class="spark spark-one">✦</div>
+        <div class="spark spark-two">✦</div>
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+      </div>
+    </section>
+
+    <section class="quick-pick" aria-labelledby="quick-title">
+      <div>
+        <p class="section-kicker">A good place to start</p>
+        <h2 id="quick-title">How old is your learner?</h2>
+      </div>
+      <div class="age-pills" role="group" aria-label="Choose an age range">
+        <button class="age-pill" data-age="4-6"><span>4–6</span> Early learners</button>
+        <button class="age-pill" data-age="7-9"><span>7–9</span> Growing minds</button>
+        <button class="age-pill" data-age="10-12"><span>10–12</span> Bright thinkers</button>
+      </div>
+    </section>
+
+    <section class="games-section" id="games">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Pick your next adventure</p>
+          <h2>Games to help you grow</h2>
+        </div>
+        <p>Every game is short, focused and designed to make practice feel like play.</p>
+      </div>
+
+      <div class="filter-row" role="group" aria-label="Filter games by subject">
+        <button class="filter active" data-subject="all">All games</button>
+        <button class="filter" data-subject="spelling"><span class="filter-dot coral"></span>Spelling</button>
+        <button class="filter" data-subject="english"><span class="filter-dot yellow"></span>English</button>
+        <button class="filter" data-subject="maths"><span class="filter-dot blue"></span>Maths</button>
+      </div>
+
+      <div class="games-grid" id="games-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>No games match those filters yet. Try another age or subject.</p>
+    </section>
+
+    <section class="grown-ups" id="grown-ups">
+      <div class="grown-art" aria-hidden="true">
+        <span class="big-heart">♥</span>
+        <span class="mini-star one">★</span><span class="mini-star two">★</span>
+      </div>
+      <div>
+        <p class="section-kicker">A note for grown-ups</p>
+        <h2>Thoughtful play, made simple.</h2>
+        <p>BrightSprout games practise one clear skill at a time. No adverts, no distracting feeds, and no account needed—just choose and play together.</p>
+      </div>
+      <div class="promise-list">
+        <p><span>✓</span> Age-appropriate challenges</p>
+        <p><span>✓</span> Clear learning goals</p>
+        <p><span>✓</span> Friendly, encouraging feedback</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#top"><span class="brand-mark">✦</span><span>BrightSprout</span></a>
+    <p>Made for curious minds everywhere.</p>
+    <p>© <span id="year"></span> BrightSprout</p>
+  </footer>
+
+  <dialog id="game-dialog" aria-labelledby="game-title">
+    <button class="dialog-close" aria-label="Close game">×</button>
+    <div class="game-shell">
+      <p class="game-label">SPELLING · AGES 7–9</p>
+      <h2 id="game-title">Word Builder</h2>
+      <p id="game-instruction">Unscramble the letters to make the pictured word.</p>
+      <div class="round-progress" aria-label="Game progress"><span id="round-number">1</span> of 5</div>
+      <div class="picture-card" id="picture-card" aria-hidden="true">🐸</div>
+      <div class="answer-slots" id="answer-slots"></div>
+      <div class="letter-bank" id="letter-bank"></div>
+      <p class="game-message" id="game-message" aria-live="polite"></p>
+      <div class="game-controls">
+        <button class="button button-soft" id="clear-answer">Clear</button>
+        <button class="button button-primary" id="check-answer">Check word</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

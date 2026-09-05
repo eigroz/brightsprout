@@ -1,4 +1,5 @@
 const games = [
+  { id: "spell-quest", title: "Spell Quest", subject: "spelling", ages: ["7-9", "10-12"], emoji: "🐲", colour: "#e1d8f7", description: "Explore the Wordwood through spoken prompts, word challenges and boss rounds.", playable: true, href: "games/spell-quest/" },
   { id: "word-builder", title: "Word Builder", subject: "spelling", ages: ["4-6", "7-9"], emoji: "🐸", colour: "#dcefdc", description: "Unscramble letters and build everyday words.", playable: true },
   { id: "sound-safari", title: "Sound Safari", subject: "english", ages: ["4-6", "7-9"], emoji: "🦁", colour: "#f6d7a8", description: "Listen for beginning sounds on a wild word hunt." },
   { id: "number-nest", title: "Number Nest", subject: "maths", ages: ["4-6"], emoji: "🐣", colour: "#d5e9ef", description: "Count, compare and help each chick find its nest." },
@@ -85,8 +86,14 @@ function updateAnswer() {
 }
 
 grid.addEventListener("click", event => {
-  const button = event.target.closest("[data-game='word-builder']");
+  const button = event.target.closest("[data-game]");
   if (!button) return;
+  const selectedGame = games.find(game => game.id === button.dataset.game);
+  if (selectedGame?.href) {
+    window.location.href = selectedGame.href;
+    return;
+  }
+  if (button.dataset.game !== "word-builder") return;
   round = 0;
   drawRound();
   dialog.showModal();

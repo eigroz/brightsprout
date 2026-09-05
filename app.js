@@ -1,5 +1,5 @@
 const games = [
-  { id: "spell-quest", title: "Spell Quest", subject: "spelling", ages: ["7-9", "10-12"], emoji: "🐲", colour: "#e1d8f7", description: "Explore the Wordwood through spoken prompts, word challenges and boss rounds.", playable: true, href: "games/spell-quest/" },
+  { id: "spell-quest", title: "Spell Quest", subject: "spelling", ages: ["7-9"], ageLabel: "7–8", emoji: "🐲", colour: "#e1d8f7", description: "Explore the Wordwood through spoken prompts, word challenges and boss rounds.", playable: true, href: "games/spell-quest/" },
   { id: "word-builder", title: "Word Builder", subject: "spelling", ages: ["4-6", "7-9"], emoji: "🐸", colour: "#dcefdc", description: "Unscramble letters and build everyday words.", playable: true },
   { id: "sound-safari", title: "Sound Safari", subject: "english", ages: ["4-6", "7-9"], emoji: "🦁", colour: "#f6d7a8", description: "Listen for beginning sounds on a wild word hunt." },
   { id: "number-nest", title: "Number Nest", subject: "maths", ages: ["4-6"], emoji: "🐣", colour: "#d5e9ef", description: "Count, compare and help each chick find its nest." },
@@ -20,7 +20,7 @@ function renderGames() {
   grid.innerHTML = shown.map(game => `
     <article class="game-card">
       <div class="card-art" style="--card-bg:${game.colour}">
-        <span class="age-tag">Ages ${game.ages.join(" & ")}</span>
+        <span class="age-tag">Ages ${game.ageLabel || game.ages.join(" & ")}</span>
         <span aria-hidden="true">${game.emoji}</span>
       </div>
       <div class="card-body">

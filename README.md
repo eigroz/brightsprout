@@ -8,6 +8,7 @@ A playful, responsive education-game hub for children aged 4–12. Learners can 
 - Age filters for 4–6, 7–9 and 10–12
 - Subject filters for spelling, English and maths
 - A complete five-round Word Builder spelling game
+- The full Spell Quest adventure for ages 7–8, with an expandable in-game age selector
 - Accessible semantic markup, keyboard-friendly controls and reduced setup
 - No build step or external JavaScript dependencies
 

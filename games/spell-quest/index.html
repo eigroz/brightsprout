@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2d195f">
+  <title>Spell Quest — Enchanted Forest</title>
+  <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+  <div class="sparkles" aria-hidden="true"></div>
+  <header class="topbar">
+    <button class="brand" data-nav="home" aria-label="Go home"><span class="brand-gem">S</span><span>Spell Quest</span></button>
+    <a class="hub-link" href="../../" aria-label="Return to all BrightSprout games">← All BrightSprout games</a>
+    <div class="wallet" aria-label="Your rewards"><span>🪙 <b id="coinCount">0</b></span><span>⭐ <b id="starCount">0</b></span></div>
+    <button class="icon-btn" data-nav="parent" aria-label="Parent area">⚙️</button>
+  </header>
+
+  <main>
+    <section id="homeScreen" class="screen active">
+      <div class="hero">
+        <div class="hero-copy">
+          <span id="homeQuestLabel" class="eyebrow">WORLD 1 · QUEST 1 OF 30</span>
+          <h1>The Enchanted<br><em>Wordwood</em></h1>
+          <p>Ten magical words are hiding in the forest. Spell them to light the lanterns and wake the friendly dragon!</p>
+          <button id="startBtn" class="primary big">Begin Quest 1 <span>→</span></button>
+          <button id="mapBtn" class="secondary map-btn">View the 30-quest map</button>
+          <p class="tiny">About 10 minutes · Progress saves on this device</p>
+        </div>
+        <div class="world-art" aria-label="A friendly dragon in an enchanted forest">
+          <div class="moon">✦</div><div class="tree t1">♠</div><div class="tree t2">♠</div>
+          <div class="dragon">🐲</div><div class="lantern">🏮</div>
+          <div class="path"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="quest-card">
+        <div><span class="map-icon">🗺️</span><div><b>Today’s adventure</b><small>Hear, spot and build brilliant words</small></div></div>
+        <div class="reward-preview"><span>Reward</span><b>🎒 Explorer’s Pack</b></div>
+      </div>
+      <div id="weeklyHomeCard" class="weekly-home-card" hidden>
+        <div class="weekly-orb">✨</div><div><span class="eyebrow">WEEKLY WORD SIDEQUEST</span><h3 id="weeklyHomeTitle">School words are ready!</h3><p id="weeklyHomeWords"></p></div><button id="weeklyHomeStart" class="primary">Play sidequest →</button>
+      </div>
+    </section>
+
+    <section id="mapScreen" class="screen">
+      <div class="map-wrap">
+        <button class="quiet back-home" data-nav="home">‹ Back to the Wordwood</button>
+        <div class="map-heading"><div><span class="eyebrow">YEAR 3–4 PATHWAY</span><h2>Thirty spelling quests</h2><p>Six worlds build from sound patterns to independent spelling mastery.</p></div><div class="map-key"><span>● Ready</span><span>✓ Complete</span><span>🔒 Locked</span></div></div>
+        <div class="map-board"><div id="weeklyMapCard" class="weekly-map-card" hidden><span>✨</span><div><small>BONUS PATH</small><b>Weekly Word Sidequest</b><em id="weeklyMapWords"></em></div><button id="weeklyMapStart" class="primary">Play →</button></div><div id="questWorlds" class="quest-worlds"></div></div>
+        <div class="panel mastery-note"><b>How progress works</b><p>A child moves forward after showing secure understanding—not perfection. Difficult words continue to appear in review quests until recalled confidently on a later day.</p></div>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen">
+      <div class="game-shell">
+        <div class="progress-head"><button id="exitBtn" class="quiet">‹ Leave quest</button><span id="roundLabel">Quest 1 of 10</span><span id="xpLabel">0 XP</span></div>
+        <div class="progress"><i id="progressBar"></i></div>
+        <article class="challenge-card">
+          <div id="modeBadge" class="mode-badge">🔊 Hear & Spell</div>
+          <div id="promptArea"></div>
+          <div id="answerArea"></div>
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+        </article>
+        <div class="companion"><span id="owlFace">🦉</span><p id="owlText">I’m with you! Have a go.</p></div>
+      </div>
+    </section>
+
+    <section id="bossScreen" class="screen">
+      <div class="boss-stage">
+        <div class="boss-top"><span>FINAL CHALLENGE</span><b id="bossProgress">1 / 5</b></div>
+        <div class="boss-avatar">🐉<i id="bossGlow"></i></div>
+        <h2>Glowtail’s Word Challenge</h2>
+        <p id="bossIntro">Spell five words to help Glowtail light the whole forest!</p>
+        <div id="bossChallenge" class="boss-card"></div>
+        <div id="bossFeedback" class="feedback" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="resultsScreen" class="screen">
+      <div class="results-wrap">
+        <div class="celebrate">✦ <span>🏆</span> ✦</div>
+        <span id="resultEyebrow" class="eyebrow">QUEST COMPLETE</span><h2 id="resultTitle">You lit up the Wordwood!</h2>
+        <p id="resultMessage">Brilliant effort — every try made your spelling magic stronger.</p>
+        <div class="score-row"><div><b id="resultStars">0</b><span>Stars</span></div><div><b id="resultCoins">0</b><span>Coins</span></div><div><b id="resultWords">0/10</b><span>First try</span></div></div>
+        <div id="resultUnlock" class="unlock"><span>🎒</span><div><small>NEW REWARD</small><b>Explorer’s Pack unlocked!</b></div></div>
+        <div class="result-actions"><button id="playAgain" class="primary">Play another quest</button><button class="secondary" data-nav="parent">See grown-up results</button></div>
+      </div>
+    </section>
+
+    <section id="parentScreen" class="screen">
+      <div class="parent-wrap">
+        <button class="quiet back-home" data-nav="home">‹ Back to adventure</button>
+        <div class="parent-head"><div><span class="eyebrow">GROWN-UP AREA</span><h2>Learning dashboard</h2><p>A simple view of this device’s latest quest.</p></div><div class="local-pill">🔒 Saved only here</div></div>
+        <div id="emptyResults" class="panel empty"><span>🌱</span><h3>No quest completed yet</h3><p>Results will bloom here after the first adventure.</p></div>
+        <div id="dashboard" hidden>
+          <div class="stats-grid"><div><small>Attempts</small><b id="pAttempts">—</b></div><div><small>First-time accuracy</small><b id="pAccuracy">—</b></div><div><small>Words mastered</small><b id="pMastered">—</b></div><div><small>Stars earned</small><b id="pStars">—</b></div></div>
+          <div class="dashboard-grid"><div class="panel"><h3>Word confidence</h3><div id="wordResults" class="word-results"></div></div><div class="panel"><h3>Patterns to practise</h3><div id="patterns"></div><p class="parent-tip">Try saying the word, covering it, writing it, then checking it together.</p></div></div>
+        </div>
+        <div class="panel planner weekly-editor">
+          <div class="planner-head"><div><span class="eyebrow">WEEKLY WORD SIDEQUEST</span><h3>This week’s school words</h3><p>Add the words being taught at school. They create a separate bonus adventure and never replace the carefully sequenced main quests.</p></div><div id="weeklyReadyBadge" class="weekly-ready-badge">No list yet</div></div>
+          <div class="planner-grid"><div><label class="field-label" for="customWords">Type or paste words</label><textarea id="customWords" rows="6" placeholder="Example: treasure, special, caught, library, bicycle"></textarea><p class="field-help">Separate words with commas or put one word on each line. Add 3–20 words; longer lists rotate through 10-word sessions.</p><div class="custom-actions"><button id="saveWords" class="primary">Save weekly words</button><button id="clearWords" class="quiet">Clear list</button><span id="saveStatus" aria-live="polite"></span></div></div><div><label class="field-label">Or import Excel or CSV</label><label id="dropZone" class="drop-zone" for="fileInput"><span>📊</span><b>Drop a school list here</b><small>or tap to choose .xlsx, .xls or .csv</small></label><input id="fileInput" type="file" accept=".xlsx,.xls,.csv" hidden><div id="weeklyPreview" class="weekly-preview"></div></div></div>
+          <div class="sidequest-explainer"><span>🗺️</span><div><b>What happens next?</b><p>A glowing sidequest appears on the adventure and map screens. It uses these exact words in Hear &amp; Spell, Missing Letters, Word Smash and the boss challenge.</p></div><button id="parentSidequestStart" class="secondary" hidden>Play weekly sidequest →</button></div>
+          <p class="privacy-note">🔒 The list and results stay in this browser. You can replace the list whenever the school words change.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="app.js?v=7"></script>
+</body>
+</html>

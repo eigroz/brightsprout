@@ -36,6 +36,13 @@ let state={queue:[],index:0,records:{},coins:0,xp:0,boss:[],bossIndex:0,bossCorr
 const saved=JSON.parse(localStorage.getItem('spellQuest')||'{}');
 if(!saved.weeklyWords){const legacy=((saved.weeklyPlan||{})[Number(saved.activeWeek)||1]||[]).filter(Boolean);if(legacy.length)saved.weeklyWords=legacy}
 $('#coinCount').textContent=saved.totalCoins||0; $('#starCount').textContent=saved.totalStars||0;
+const ageGate=$('#ageGate'),selectedAge=$('#selectedAge');
+function ageLabel(age){return age.replace('-', '–')}
+function chooseAge(age){saved.learnerAge=age;persist();selectedAge.textContent=ageLabel(age);ageGate.close()}
+$$('[data-learner-age]').forEach(button=>button.onclick=()=>chooseAge(button.dataset.learnerAge));
+$('#changeAge').onclick=()=>ageGate.showModal();
+selectedAge.textContent=ageLabel(saved.learnerAge||'7-8');
+if(!saved.learnerAge)setTimeout(()=>ageGate.showModal(),0);
 function show(id){$$('.screen').forEach(x=>x.classList.remove('active'));$('#'+id+'Screen').classList.add('active');scrollTo(0,0);if(id==='home')renderWeeklyEntrances();if(id==='parent')renderParent();if(id==='map')renderMap()}
 $$('[data-nav]').forEach(b=>b.onclick=()=>show(b.dataset.nav));
 $('#mapBtn').onclick=()=>show('map');

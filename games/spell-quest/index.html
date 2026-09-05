@@ -16,6 +16,19 @@
     <button class="icon-btn" data-nav="parent" aria-label="Parent area">⚙️</button>
   </header>
 
+  <dialog id="ageGate" class="age-gate" aria-labelledby="ageGateTitle">
+    <div class="age-gate-art" aria-hidden="true">🐲</div>
+    <span class="eyebrow">BEFORE YOUR ADVENTURE</span>
+    <h2 id="ageGateTitle">Choose your learner’s age</h2>
+    <p>We’ll match the words and challenges to the right learning stage.</p>
+    <div class="age-options">
+      <button class="age-option available" data-learner-age="7-8"><b>Ages 7–8</b><span>Enter the Wordwood</span></button>
+      <button class="age-option" disabled><b>Ages 9–10</b><span>Coming soon</span></button>
+      <button class="age-option" disabled><b>Ages 11–12</b><span>Coming soon</span></button>
+    </div>
+    <small>More age groups will unlock as their spelling adventures are ready.</small>
+  </dialog>
+
   <main>
     <section id="homeScreen" class="screen active">
       <div class="hero">
@@ -25,6 +38,7 @@
           <p>Ten magical words are hiding in the forest. Spell them to light the lanterns and wake the friendly dragon!</p>
           <button id="startBtn" class="primary big">Begin Quest 1 <span>→</span></button>
           <button id="mapBtn" class="secondary map-btn">View the 30-quest map</button>
+          <button id="changeAge" class="quiet change-age">Learner age: <b id="selectedAge">7–8</b> · Change</button>
           <p class="tiny">About 10 minutes · Progress saves on this device</p>
         </div>
         <div class="world-art" aria-label="A friendly dragon in an enchanted forest">

@@ -96,8 +96,8 @@
         <div id="dashboard" hidden>
           <div class="stats-grid"><div><small>Attempts</small><b id="pAttempts">—</b></div><div><small>First-time accuracy</small><b id="pAccuracy">—</b></div><div><small>Words mastered</small><b id="pMastered">—</b></div><div><small>Stars earned</small><b id="pStars">—</b></div></div>
           <div class="dashboard-grid"><div class="panel"><h3>Word confidence</h3><div id="wordResults" class="word-results"></div></div><div class="panel"><h3>Patterns to practise</h3><div id="patterns"></div><p class="parent-tip">Try saying the word, covering it, writing it, then checking it together.</p></div></div>
-          <div class="panel confidence-panel"><div class="confidence-head"><div><span class="eyebrow">LEARNING OVER TIME</span><h3>Confidence tracker</h3><p>Built from every completed quest on this device. Words move up as they are recalled correctly on the first try.</p></div><button id="startFocusQuest" class="primary" hidden>Play practice sidequest →</button></div><div id="confidenceSummary" class="confidence-summary"></div><div id="confidenceWords" class="confidence-list"></div><h3 class="type-title">What kind of spelling needs help?</h3><div id="confidenceTypes" class="type-insights"></div><p id="focusQuestNote" class="parent-tip"></p></div>
         </div>
+          <div class="panel confidence-panel"><div class="confidence-head"><div><span class="eyebrow">LEARNING OVER TIME</span><h3>Confidence tracker</h3><p>Built from every completed quest on this device. Words move up as they are recalled correctly on the first try.</p></div><button id="startFocusQuest" class="primary" hidden>Play practice sidequest →</button></div><div id="confidenceSummary" class="confidence-summary"></div><div id="confidenceWords" class="confidence-list"></div><h3 class="type-title">What kind of spelling needs help?</h3><div id="confidenceTypes" class="type-insights"></div><p id="focusQuestNote" class="parent-tip"></p></div>
         <div class="panel planner weekly-editor">
           <div class="planner-head"><div><span class="eyebrow">WEEKLY WORD SIDEQUEST</span><h3>This week’s school words</h3><p>Add the words being taught at school. They create a separate bonus adventure and never replace the carefully sequenced main quests.</p></div><div id="weeklyReadyBadge" class="weekly-ready-badge">No list yet</div></div>
           <div class="planner-grid"><div><label class="field-label" for="customWords">Type or paste words</label><textarea id="customWords" rows="6" placeholder="Example: treasure, special, caught, library, bicycle"></textarea><p class="field-help">Separate words with commas or put one word on each line. Add 3–20 words; longer lists rotate through 10-word sessions.</p><div class="custom-actions"><button id="saveWords" class="primary">Save weekly words</button><button id="clearWords" class="quiet">Clear list</button><span id="saveStatus" aria-live="polite"></span></div></div><div><label class="field-label">Or import Excel or CSV</label><label id="dropZone" class="drop-zone" for="fileInput"><span>📊</span><b>Drop a school list here</b><small>or tap to choose .xlsx, .xls or .csv</small></label><input id="fileInput" type="file" accept=".xlsx,.xls,.csv" hidden><div id="weeklyPreview" class="weekly-preview"></div></div></div>
@@ -109,7 +109,6 @@
   </main>
   <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
   <script src="quest-data.js?v=1"></script>
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>
-

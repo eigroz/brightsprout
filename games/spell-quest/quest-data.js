@@ -1,44 +1,58 @@
-/* Curriculum pathway data is kept separate so new year groups can be added cleanly. */
-const QUESTS = [
-  ['Sound detectives',['because','beautiful','different','important','thought','enough','favourite','remember','straight','surprise']],
-  ['Vowel teams',['eight','weight','reign','veil','neighbour','break','great','steak','breathe','increase']],
-  ['Long and short sounds',['woman','women','minute','natural','popular','ordinary','calendar','grammar','famous','favourite']],
-  ['Consonant teams',['character','chemist','chorus','scheme','school','echo','anchor','technology','knowledge','question']],
-  ['Sound Trail Path Test',['straight','weight','breathe','women','calendar','chemist','knowledge','question','enough','favourite']],
-  ['Adding -ful and -less',['helpful','careful','hopeful','thoughtful','beautiful','careless','hopeless','fearless','endless','useless']],
-  ['Adding -ly',['sadly','completely','usually','finally','gently','simply','happily','angrily','basically','frantically']],
-  ['Adding -ment and -ness',['enjoyment','movement','statement','treatment','payment','kindness','darkness','fairness','sadness','happiness']],
-  ['Changing root words',['hoping','hopping','preferred','beginning','forgotten','limiting','gardener','happiest','easily','business']],
-  ['Suffix Springs Path Test',['thoughtful','careless','completely','happily','enjoyment','kindness','hopping','beginning','easily','business']],
-  ['re- and dis-',['redo','return','refresh','reappear','rebuild','disagree','dislike','disobey','disappear','dishonest']],
-  ['mis- and in-',['misbehave','mislead','misplace','misread','mistake','inactive','incorrect','incomplete','insecure','invisible']],
-  ['sub- and inter-',['subdivide','subheading','submarine','submerge','subsoil','interact','international','internet','interrelated','intercity']],
-  ['Word families',['solve','solution','sign','signal','magic','magician','press','pressure','please','pleasant']],
-  ['Prefix Peaks Path Test',['reappear','disappear','misbehave','misread','inactive','incorrect','submarine','international','solution','pressure']],
-  ['Here or hear?',['here','hear','heel','heal','plain','plane','break','brake','mail','male']],
-  ['There, their and they’re',['there','their',"they're",'where','wear','were',"we're",'your',"you're",'our']],
-  ['To, too and two',['to','too','two','one','won','four','for','eight','ate','be']],
-  ['Meaning chooses spelling',['peace','piece','rain','reign','seen','scene','weather','whether','whose',"who's"]],
-  ['Homophone Harbour Path Test',['here','hear','plain','plane','there','their',"they're",'to','too','two']],
-  ['Unexpected vowels',['answer','appear','arrive','believe','build','busy','early','earth','fruit','guard']],
-  ['Silent letters',['island','answer','knowledge','often','thumb','knock','write','wrap','solemn','doubt']],
-  ['The many sounds of -ough',['though','although','thought','bought','brought','through','breakthrough','rough','tough','enough']],
-  ['Commonly confused words',['accept','except','affect','effect','breath','breathe','loose','lose','quite','quiet']],
-  ['Tricky Word Tower Path Test',['believe','business','fruit','guard','island','knowledge','though','through','enough','breathe']],
-  ['Roots and relatives',['act','action','actual','actually','medicine','medical','mention','position','possess','possession']],
-  ['Syllable strategies',['accident','bicycle','calendar','consider','continue','exercise','experience','experiment','material','particular']],
-  ['Words in sentences',['address','centre','complete','decide','describe','history','imagine','interest','library','sentence']],
-  ['Cumulative recall',['caught','different','difficult','February','forward','height','important','occasion','opposite','possible']],
-  ['Wordwood Champion Test',['bicycle','beautiful','different','disappear','favourite','knowledge','occasionally','separate','straight','therefore']]
-].map((q,i)=>({id:i+1,title:q[0],words:q[1],test:(i+1)%5===0,world:Math.floor(i/5)+1}));
+/* Year 2-to-3 pathway based on DfE English Appendix 1; every fifth quest reviews learning. */
+const QUESTS=[
+['The j sound',['badge','edge','bridge','dodge','fudge','age','huge','change','charge','village']],
+['Silent starters',['knock','know','knee','knew','gnat','gnaw','write','wrote','wrong','wrap']],
+['Words ending in l',['table','apple','bottle','little','middle','camel','tunnel','squirrel','metal','pedal']],
+['Helpful endings',['helpful','careful','playful','hopeless','fearless','careless','payment','enjoyment','sadness','kindness']],
+['Sound Steps Path Test',['bridge','change','knock','write','apple','little','helpful','careless','payment','kindness']],
+['Adding -ly',['badly','sadly','slowly','quickly','softly','happily','angrily','gently','simply','usually']],
+['Adding endings',['hiking','hiked','hiker','nicer','nicest','running','runner','bigger','biggest','dropped']],
+['Short forms',['cannot','didn’t','hasn’t','couldn’t','it’s','I’ll','we’re','they’re','you’re','won’t']],
+['Sound-alike words',['there','their','here','hear','see','sea','one','won','sun','son']],
+['Word Building Path Test',['quickly','happily','hiking','running','couldn’t','they’re','there','their','one','won']],
+['Everyday tricky words',['door','floor','poor','because','find','kind','mind','behind','child','children']],
+['More tricky words',['wild','climb','most','only','both','old','cold','gold','hold','told']],
+['Words to remember',['every','everybody','even','great','break','steak','pretty','beautiful','after','fast']],
+['Final Year 2 words',['last','past','father','class','grass','pass','plant','path','bath','hour']],
+['Year 2 Explorer Test',['because','children','climb','every','great','beautiful','father','class','plant','hour']],
+['The y sound',['myth','gym','Egypt','pyramid','mystery','symbol','system','lyric','typical','crystal']],
+['The ou surprise',['young','touch','double','trouble','country','rough','tough','enough','couple','cousin']],
+['Prefixes',['disappoint','disagree','disobey','disappear','misbehave','mislead','misspell','inactive','incorrect','invisible']],
+['Again with re-',['redo','return','refresh','reappear','rebuild','replay','rewrite','reread','replace','recycle']],
+['Pattern Woods Path Test',['mystery','system','young','country','enough','disappear','misspell','incorrect','rewrite','recycle']],
+['The -ation ending',['information','adoration','sensation','preparation','admiration','invention','injection','action','completion','celebration']],
+['More -ly rules',['sadly','completely','usually','finally','gently','simply','happily','angrily','basically','frantically']],
+['ch with different sounds',['chef','chalet','machine','brochure','chemist','chorus','school','echo','character','scheme']],
+['Hidden letter teams',['league','tongue','antique','unique','science','scene','discipline','fascinate','muscle','crescent']],
+['Word Parts Path Test',['information','celebration','completely','happily','machine','chemist','school','unique','science','scene']],
+['ei, eigh and ey',['eight','eighth','weight','neighbour','vein','veil','reign','they','obey','grey']],
+['Word families',['solve','solution','sign','signal','magic','magician','press','pressure','please','pleasant']],
+['Year 3 challenge words',['accident','actual','address','answer','arrive','bicycle','calendar','centre','circle','complete']],
+['Ready for Year 4',['decide','describe','early','earth','exercise','experience','famous','February','forward','fruit']],
+['Wordwood Champion Test',['weight','neighbour','solution','magician','accident','bicycle','calendar','describe','February','fruit']]
+].map((q,i)=>({id:i+1,title:q[0],words:q[1],test:(i+1)%5===0,world:Math.floor(i/5)+1,stage:i<15?'Year 2':'Year 3'}));
 
-const QUEST_SENTENCES = {
-  there:'Put the book over there.',their:'The children packed their bags.',"they're":'They’re going to the library.',
-  to:'We walked to school.',too:'I would like to come too.',two:'There are two birds in the tree.',
-  here:'Please sit here.',hear:'Can you hear the music?',weather:'The weather is sunny.',whether:'I wonder whether it will rain.',
-  whose:'Whose coat is this?',"who's":'Who’s coming with us?',your:'Remember your reading book.',"you're":'You’re doing very well.',
-  our:'Our class planted seeds.',"we're":'We’re ready to begin.',were:'We were happy to help.'
+const QUEST_GUIDES={
+1:{sound:'/j/',rule:'After a short vowel, /j/ is often written dge. Elsewhere it may be ge.',strategy:'Stretch the last sound, then choose dge or ge.'},
+2:{sound:'silent first letters',rule:'In kn, gn and wr, the first letter is written but not spoken.',strategy:'Whisper the silent letter before spelling the whole word.'},
+3:{sound:'/l/ at the end',rule:'Final /l/ is most often -le, but can be -el, -al or -il.',strategy:'Clap the syllables and mark the letters spelling final /l/.'},
+4:{sound:'word endings',rule:'-ful, -less, -ment and -ness attach to a root word.',strategy:'Spot the root first, then attach the ending.'},
+6:{sound:'/lee/ ending',rule:'The ending -ly tells us how something happens.',strategy:'Keep the root word visible, then add ly.'},
+7:{sound:'adding endings',rule:'A short vowel may need a doubled consonant; a final e may be dropped.',strategy:'Find the root, then check whether to double or drop.'},
+8:{sound:'shortened words',rule:'An apostrophe marks letters left out of a contraction.',strategy:'Say both full words and put the apostrophe where letters disappear.'},
+9:{sound:'same sound, different meaning',rule:'Homophones sound the same; meaning chooses their spelling.',strategy:'Use the whole sentence to choose the meaning.'},
+11:{sound:'common exception words',rule:'Some useful words do not follow the sound spellings learned so far.',strategy:'Say it, spot the tricky part, cover, write and check.'},
+16:{sound:'/i/ written y',rule:'In some Greek-root words, y spells short /i/.',strategy:'Mark the y, say /i/, then read the whole word.'},
+17:{sound:'/u/ written ou',rule:'In this family, ou spells the /u/ sound.',strategy:'Ring ou and connect the words as one family.'},
+18:{sound:'prefixes',rule:'dis-, mis- and in- change the meaning of a root.',strategy:'Build the word in two parts: prefix, then root.'},
+19:{sound:'re- means again or back',rule:'The prefix re- is added before a root word.',strategy:'Say re, say the root, then join them.'},
+21:{sound:'/shun/ ending',rule:'The /shun/ ending is often written -ation.',strategy:'Find the root, then learn ation as one stable chunk.'},
+22:{sound:'/lee/ ending',rule:'Usually add -ly; consonant+y changes to i before -ly.',strategy:'Say the root, make the change, then add ly.'},
+23:{sound:'/ch/, /sh/ or /k/',rule:'The letters ch can represent three sounds in these words.',strategy:'Sort each word by the sound ch makes.'},
+24:{sound:'unusual letter teams',rule:'gue, que and sc can contain letters we do not clearly hear.',strategy:'Highlight the fixed team, say its letters, then read the word.'},
+26:{sound:'/ay/ sound',rule:'/ay/ can be written ei, eigh or ey in this group.',strategy:'Sort the words by grapheme and compare them.'},
+27:{sound:'related words',rule:'A word relative can reveal a hidden spelling sound.',strategy:'Find the relative that makes the spelling easier to hear.'}
 };
-
-function questWordData(quest){return quest.words.map(word=>({word,sentence:QUEST_SENTENCES[word]||`Listen carefully and spell the word ${word}.`,pattern:quest.title}))}
-
+const QUEST_SENTENCES={there:'Put the book over there.',their:'The children packed their bags.',here:'Please sit here.',hear:'Can you hear the music?',see:'I can see a rainbow.',sea:'The boat sailed across the sea.',one:'There is one apple left.',won:'Our team won the match.',sun:'The sun is shining.',son:'Their son likes football.',"they’re":'They’re going to the library.',"we’re":'We’re ready to begin.',"you’re":'You’re doing very well.'};
+function questGuide(quest){if(QUEST_GUIDES[quest.id])return QUEST_GUIDES[quest.id];if(quest.test)return{sound:'mixed review',rule:'This path test revisits patterns from the previous four quests.',strategy:'Say, segment, spell, then read the word back.'};return QUEST_GUIDES[11]}
+function questWordData(quest){const guide=questGuide(quest);return quest.words.map(word=>({word,sentence:QUEST_SENTENCES[word]||`Listen carefully. The word is ${word}. Can you spell ${word}?`,pattern:quest.title,guide,stage:quest.stage}))}

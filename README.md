@@ -1,4 +1,4 @@
-# BrightSprout
+# BrightSprites
 
 A playful, responsive education-game hub for children aged 4–12. Learners can browse by age and subject, then play focused learning games directly on the site.
 
@@ -8,9 +8,9 @@ A playful, responsive education-game hub for children aged 4–12. Learners can 
 - Age filters for 4–6, 7–9 and 10–12
 - Subject filters for spelling, English and maths
 - A complete five-round Word Builder spelling game
-- The full Spell Quest adventure for ages 7–8, with an expandable in-game age selector
+- Spell Quest with 30 Year 3/4 quests, path tests, weekly words, local child profiles, narrator controls and an initial confidence tracker
 - Accessible semantic markup, keyboard-friendly controls and reduced setup
-- No build step or external JavaScript dependencies
+- No build step; Spell Quest uses an optional external spreadsheet reader for school lists
 
 ## Run locally
 
@@ -18,7 +18,13 @@ Open `index.html` in a browser, or serve the folder with any static web server.
 
 ## Publish
 
-This site is ready for GitHub Pages, Netlify, Cloudflare Pages, or any static host. For GitHub Pages, publish the repository and enable Pages from the repository's `main` branch.
+Live hub: https://brightsprites.pages.dev/
+
+Spell Quest: https://brightsprites.pages.dev/games/spell-quest/
+
+Cloudflare Pages project `brightsprites` automatically publishes the `main` branch of `eigroz/brightsprout`. Build command is empty and output directory is `.`. The GitHub repository retains its original name. The original `brightsprout` Cloudflare project is retained for existing links; these BrightSprites addresses are the current share links.
+
+Child progress is saved locally per browser and site address; source-code backup on GitHub does not back up child records. Accounts and cross-device synchronisation are not active yet.
 
 ## Project direction
 

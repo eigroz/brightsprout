@@ -23,8 +23,8 @@ const WORD_HELP = {
   surprise:{sounds:['sur','prise'],syllables:['sur','prise'],parts:['sur','prise'],tricky:'rpr',tip:'There is an r before and after the first p: sur-pri-se.'}
 };
 const WORLDS=[
-  ['🌿','Year 2 Sound Steps',[]],['💧','Year 2 Word Building',[]],['🏕️','Year 2 Explorer Camp',[]],
-  ['🍄','Year 3 Pattern Woods',[]],['🏰','Year 3 Word Parts',[]],['🌟','Year 3 Mastery Mountain',[]]
+  ['🌿','Year 2 Sound Steps',[1,2,3,4,5]],['💧','Year 2 Word Building',[6,7,8,9,10]],['🏕️','Year 2 Explorer Camp',[11,12,13,14,15]],
+  ['🍄','Year 3 Pattern Woods',[16,17,18,19,20]],['🏰','Year 3 Word Parts',[21,22,23,24,25]],['🌟','Year 3 Mastery Mountain',[26,27,28,29,30]]
 ];
 const WORD_BANK = `accident actual address answer appear arrive believe bicycle breath breathe build busy business calendar caught centre century certain circle complete consider continue decide describe disappear early earth eight eighth exercise experience experiment extreme famous February forward fruit grammar group guard guide heard heart height history imagine increase interest island knowledge learn length library material medicine mention minute natural naughty notice occasion occasionally often opposite ordinary particular peculiar perhaps popular position possess possession possible potatoes pressure probably promise purpose quarter question recent regular reign sentence separate special strange strength suppose therefore though although through various weight woman women`.toLowerCase().split(' ');
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
